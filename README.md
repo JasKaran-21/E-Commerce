@@ -1,12 +1,27 @@
-# React + Vite
+# 🛒 CartCraze
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**CartCraze** is a modern e-commerce web application built using **React.js**. It provides a seamless shopping experience with features like adding/removing products to/from the cart, viewing product details, and completing the checkout process.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔍 **Home Page** – Browse a collection of products fetched from an API.
+- 📦 **Product Listing** – View available items with images, names, prices, and descriptions.
+- ➕ **Add to Cart** – Instantly add any product to the shopping cart.
+- ➖ **Remove from Cart** – Remove individual items from the cart.
+- 🛒 **Cart Page** – View items added to the cart with quantity and total price.
+- ✅ **Checkout Page** – Proceed with checkout and review your order.
+- 🌐 **API Integration** – Fetch real-time product data using `fetch()`.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧑‍💻 Tech Stack
+
+| Tech            | Description                    |
+|-----------------|--------------------------------|
+| React.js        | Frontend library               |
+| React Router    | Routing between pages          |
+| Redux Toolkit   | Global state management (cart) |
+| Fetch API       | To get product data            |
+| Tailwind CSS    | Styling and responsive design  |

@@ -53,7 +53,7 @@ function ProductCart() {
                     ) : (
                         filteredProducts.map((product) => (
                             <div key={product.id} className="p-4 shadow-lg rounded-lg bg-white">
-                                <Link to={`/product/${product.id}`} className="block">
+                                <Link to={`/home/product/${product.id}`} className="block">
                                     <img
                                         src={product.image}
                                         alt={product.title}

@@ -6,7 +6,7 @@ import CartTab from './CartTab'
 import Footer from './Footer'
 
 function Layout() {
-  const statusTabCart = useSelector(store => store.cart.statusTab)
+  // const statusTabCart = useSelector(store => store.cart.statusTab)
 
   return (
     <div className='bg-gray-100'>

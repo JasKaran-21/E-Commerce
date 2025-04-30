@@ -22,7 +22,7 @@ function CartTab() {
 
   const handleCheckout = () => {
     if (carts.length > 0) {
-      navigate("/checkout");
+      navigate("/home/checkout");
     } else {
       toast.error("Cart is Empty!")
     };

@@ -11,7 +11,7 @@ const OrderPlaced = () => {
         <p className="text-gray-600 mb-6">Thank you for your purchase. We’ll send you an update when your order ships.</p>
 
         <Link
-          to="/products"
+          to="/home/products"
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-xl transition"
         >
           Continue Shopping

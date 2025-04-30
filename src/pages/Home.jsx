@@ -66,7 +66,7 @@ function Home() {
           Shop the best deals across electronics, fashion, home essentials, and more. Fast delivery & secure payments!
         </p>
         <Link
-          to="/products"
+          to="/home/products"
           className="inline-block bg-yellow-400 text-black font-semibold px-6 py-2 rounded hover:bg-yellow-500 transition duration-300"
         >
           Shop Now
@@ -82,7 +82,7 @@ function Home() {
             alt="Electronics"
             className="h-40 w-full object-cover rounded mb-4"
           />
-          <Link to="/products" className="text-blue-600 hover:underline">
+          <Link to="/home/products" className="text-blue-600 hover:underline">
             Explore Deals
           </Link>
         </div>
@@ -94,7 +94,7 @@ function Home() {
             alt="Fashion"
             className="h-40 w-full object-cover rounded mb-4"
           />
-          <Link to="/products" className="text-blue-600 hover:underline">
+          <Link to="/home/products" className="text-blue-600 hover:underline">
             Shop Latest
           </Link>
         </div>
@@ -106,7 +106,7 @@ function Home() {
             alt="Home & Kitchen"
             className="h-40 w-full object-cover rounded mb-4"
           />
-          <Link to="/products" className="text-blue-600 hover:underline">
+          <Link to="/home/products" className="text-blue-600 hover:underline">
             Browse Now
           </Link>
         </div>

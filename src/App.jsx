@@ -14,6 +14,7 @@ import Signup from './pages/Signup'
 import Checkout from './pages/Checkout'
 import OrderPlaced from './pages/OrderPlaced'
 import ScrollToTop from './components/ScrollToTop'
+import ProductCategory from './pages/ProductCategory'
 
 function App() {
 
@@ -27,15 +28,16 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
             <Route index element={<Home />} />
-            <Route path="/home/products" element={<AllProducts />} />
-            <Route path="/home/products/:id" element={<Detail />} />
-            <Route path="/home/about" element={<About />} />
-            <Route path="/home/contact" element={<Contact />} />
-            <Route path="/home/cart" element={<ShoppingCart />} />
-            <Route path="/home/checkout" element={<Checkout />} />
-            <Route path="/home/order-placed" element={<OrderPlaced />} />
-            <Route path="*" element={<h2>404 - Page Not Found</h2>} />
+            <Route path="products" element={<AllProducts />} />
+            <Route path="products/:id" element={<Detail />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="cart" element={<ShoppingCart />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="order-placed" element={<OrderPlaced />} />
+            <Route path="category/:slug" element={<ProductCategory />} />
           </Route>
+          <Route path="*" element={<h2 className="text-center mt-10 text-red-500">404 - Page Not Found</h2>} />
         </Routes>
       </BrowserRouter>
     </>

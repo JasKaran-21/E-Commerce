@@ -107,7 +107,7 @@ function Checkout() {
                     <p className="text-gray-600">Items Total: ${subTotal.toFixed(2)}</p>
                     <p className="text-gray-600">Tax (10%): ${tax.toFixed(2)}</p>
                     <p className="text-gray-600">Shipping: ${deliveryFee.toFixed(2)}</p>
-                    <p className="font-bold mt-2">Total: ${(total + 50).toFixed(2)}</p>
+                    <p className="font-bold mt-2">Total: ${(total).toFixed(2)}</p>
 
                     <button
                         type="submit"

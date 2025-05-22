@@ -17,10 +17,10 @@ function Footer() {
 
                 {/* Navigation Links */}
                 <div className="flex space-x-6">
-                    <Link to="/" className="hover:text-white transition hover:underline duration-300">Home</Link>
-                    <Link to="/cart" className="hover:text-white transition hover:underline duration-300">Cart</Link>
-                    <Link to="/about" className="hover:text-white transition hover:underline duration-300">About</Link>
-                    <Link to="/contact" className="hover:text-white transition hover:underline duration-300">Contact</Link>
+                    <Link to="/home" className="hover:text-white transition hover:shadow-lg transform hover:-translate-y-1 duration-300 ease-in-out text-center hover:underline">Home</Link>
+                    <Link to="/home/cart" className="hover:text-white transition hover:shadow-lg transform hover:-translate-y-1 duration-300 ease-in-out text-center hover:underline">Cart</Link>
+                    <Link to="/home/about" className="hover:text-white transition hover:shadow-lg transform hover:-translate-y-1 duration-300 ease-in-out text-center hover:underline">About</Link>
+                    <Link to="/home/contact" className="hover:text-white transition hover:shadow-lg transform hover:-translate-y-1 duration-300 ease-in-out text-center hover:underline">Contact</Link>
                 </div>
             </div>
 

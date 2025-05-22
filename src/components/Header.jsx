@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import SearchBar from './Search';
 import { setSearchQuery } from '../app/SearchSlice';
@@ -7,7 +7,7 @@ import icon from '../assets/icon.png';
 import { Menu, X } from 'lucide-react';
 import authService from '../appwrite/authService';
 import toast from 'react-hot-toast';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 // import { toggleStatusTab } from '../app/Cart';
 
 function Header() {
@@ -64,10 +64,18 @@ function Header() {
 
         {/* Nav Links (second on desktop) */}
         <div className='hidden lg:flex gap-5 order-2 lg:order-2 ml-6'>
-          <Link to="/home" className='text-xl font-semibold hover:text-gray-300 hover:bg-gray-900 py-1.5 px-3 rounded-full duration-200'>Home</Link>
-          <Link to="/home/products" className='text-xl font-semibold hover:text-gray-300 hover:bg-gray-900 py-1.5 px-3 rounded-full duration-200'>Products</Link>
-          <Link to="/home/about" className='text-xl font-semibold hover:text-gray-300 hover:bg-gray-900 py-1.5 px-3 rounded-full duration-200'>About</Link>
-          <Link to="/home/contact" className='text-xl font-semibold hover:text-gray-300 hover:bg-gray-900 py-1.5 px-3 rounded-full duration-200'>Contact Us</Link>
+          <NavLink to="/home"
+            className={({ isActive }) => `text-xl font-semibold transition duration-300 hover:text-gray-300 hover:bg-gray-900 py-1.5 px-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 ease-in-out text-center ${isActive ? "" : ""}`}
+          >Home</NavLink>
+          <NavLink to="/home/products"
+            className={({ isActive }) => `text-xl font-semibold hover:text-gray-300 hover:bg-gray-900 py-1.5 px-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition duration-300 ease-in-out text-center ${isActive ? "underline text-orange-600" : ""}`}
+          >Products</NavLink>
+          <NavLink to="/home/about"
+            className={({ isActive }) => `text-xl font-semibold hover:text-gray-300 hover:bg-gray-900 py-1.5 px-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition duration-300 ease-in-out text-center ${isActive ? "underline text-orange-600" : ""}`}
+          >About</NavLink>
+          <NavLink to="/home/contact"
+            className={({ isActive }) => `text-xl font-semibold hover:text-gray-300 hover:bg-gray-900 py-1.5 px-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition duration-300 ease-in-out text-center ${isActive ? "underline text-orange-600" : ""}`}
+          >Contact Us</NavLink>
         </div>
 
         {/* SearchBar (third on desktop) */}
@@ -86,7 +94,7 @@ function Header() {
           // onClick={handleOpenTabCart}
           >
             <img src="https://cdn-icons-png.flaticon.com/128/3144/3144456.png" alt="cart" className='w-6' />
-            <span className='absolute bottom-0 left-0 bg-red-600 text-white text-sm w-5 h-5 rounded-full flex justify-center items-center'>
+            <span className='absolute top-0 right-0 bg-red-600 text-white text-sm w-5 h-5 rounded-full flex justify-center items-center'>
               {totalQuantity}
             </span>
           </div>
@@ -95,7 +103,7 @@ function Header() {
         {/* Logout Button (fifth on desktop) */}
         <button
           onClick={handleLogout}
-          className='order-4 lg:order-5 bg-red-600 text-white font-semibold py-2 px-4 rounded-xl hover:bg-red-700 transition duration-200 ml-2'
+          className='order-4 lg:order-5 bg-red-600 text-white font-semibold py-2 px-4 rounded-xl hover:shadow-lg transform hover:-translate-y-1 transition duration-300 ease-in-out text-center ml-2'
         >
           Logout
         </button>

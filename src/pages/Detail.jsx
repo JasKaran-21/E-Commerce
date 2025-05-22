@@ -3,20 +3,21 @@ import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../app/Cart';
 import toast from 'react-hot-toast';
+import { getProductById } from '../api/axios';
 
 function Detail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const data = fetch(`https://fakestoreapi.com/products/${id}`)
-      .then((response) => response.json())
-      .then((data) => setProduct(data))
-      .catch((error) => console.log("Error Product Detail: ", error))
-    console.log(data);
-
+    setLoading(true);
+    getProductById(id)
+      .then(res => setProduct(res.data))
+      .catch(err => console.log("Error Product Detail: ", err))
+      .finally(() => setLoading(false))
   }, [id])
 
   const handleDecrease = () => {
@@ -43,7 +44,7 @@ function Detail() {
           {/* Left Section - Image & Reviews */}
           <div className="w-full md:w-1/2 flex flex-col items-center">
             <img
-              src={product.image}
+              src={product.images?.[0]}
               alt={product.title}
               className="w-80 h-80 object-contain rounded-md mb-4"
             />
@@ -60,8 +61,7 @@ function Detail() {
               <span className="text-2xl font-bold text-green-600">${product.price}</span>
 
               <div className="px-3 py-1 rounded-md text-sm text-center">
-                <p className="font-semibold text-gray-800">⭐ {product.rating?.rate} / 5</p>
-                <p className="text-gray-600">({product.rating?.count} reviews)</p>
+                <p className="font-semibold text-gray-800">⭐ {product.rating} / 5</p>
               </div>
             </div>
             <h2 className="text-3xl font-semibold mb-2">{product.title}</h2>

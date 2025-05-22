@@ -1,8 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import Header from './Header'
-import CartTab from './CartTab'
 import Footer from './Footer'
 
 function Layout() {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { removeFromCart, changeQuantity } from '../app/Cart';
 import toast from 'react-hot-toast';
+import { getProductById } from '../api/axios';
 
 function CartItem(props) {
   const { productId, quantity } = props.data;
@@ -9,15 +10,13 @@ function CartItem(props) {
   const dispatch = useDispatch(); 
 
   useEffect(() => {
-    const data = fetch(`https://fakestoreapi.com/products/${productId}`) // 
-      .then((response) => response.json())
-      .then((data) => setProduct(data))
-      .catch((error) => console.log("Cart Item Error: ", error))
-    console.log(data);
+    getProductById(productId)
+    .then(res => setProduct(res.data))
+    .catch(err => console.log("Cart Item Err: ", err))
   }, [productId])
 
   if (!product) {
-    return <p className='text-gray-300'>Loading...</p>
+    return <p className='text-gray-300'>Loading product...</p>
   }
 
   // const minusQuantity = () => {
@@ -57,7 +56,7 @@ function CartItem(props) {
   return (
     <div className="flex items-center justify-between border-b border-gray-500 py-3">
       {/* Product Image */}
-      <img src={product.image} alt={product.title} className="w-16 h-16 object-contain bg-white rounded-xl shadow-2xl" />
+      <img src={product.images?.[0]} alt={product.title} className="w-16 h-16 object-contain bg-white rounded-xl shadow-2xl" />
 
       {/* Product Details */}
       <div className="flex-1 mx-4">
